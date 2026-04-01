@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 0 0% 18%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 18%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 18%;
+
+    --primary: 220 47% 20%;
+    --primary-foreground: 40 33% 97%;
+
+    --secondary: 220 60% 42%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 37 20% 91%;
+    --muted-foreground: 0 0% 35%;
+
+    --accent: 38 46% 56%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 36 18% 89%;
+    --input: 36 18% 89%;
+    --ring: 220 47% 20%;
+
+    --radius: 4px;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Custom tokens */
+    --navy: 220 47% 20%;
+    --royal: 220 60% 42%;
+    --bone: 40 33% 97%;
+    --charcoal: 0 0% 18%;
+    --text-secondary: 0 0% 35%;
+    --gold: 38 46% 56%;
+    --surface: 0 0% 100%;
+    --border-subtle: 36 18% 89%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    overflow-wrap: break-word;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium leading-tight tracking-tight;
+    line-height: 1.1;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-medium leading-snug;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+
+  h3 {
+    @apply text-lg md:text-xl font-body font-semibold leading-snug;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed;
+    text-wrap: pretty;
+    max-width: 70ch;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth page transitions */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s ease-in-out infinite;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* SkillCeta brand overrides — sky/blue tones from logo */
+.sc-hero {
+  background: linear-gradient(180deg, hsl(200 40% 96%) 0%, hsl(var(--background)) 100%);
+}
+.sc-section-alt {
+  background: hsl(200 30% 97%);
+}
+.sc-text-primary {
+  color: hsl(200 60% 35%);
+}
+
+/* Project People Talk brand overrides — warm rose/coral tones */
+.ppt-hero {
+  background: linear-gradient(180deg, hsl(350 30% 96%) 0%, hsl(var(--background)) 100%);
+}
+.ppt-section-alt {
+  background: hsl(350 20% 97%);
+}
+.ppt-text-primary {
+  color: hsl(350 50% 35%);
+}
+
+/* Event card hover lift */
+.event-card-lift {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.event-card-lift:hover {
+  transform: translateY(-2px);
+}
+
+/* ── Open newspaper styles ── */
+.newspaper-perspective {
+  perspective: 1400px;
+}
+.newspaper-spread {
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
+}
+.newspaper-paper {
+  position: relative;
+  background: linear-gradient(135deg, hsl(40 35% 95%) 0%, hsl(40 30% 92%) 50%, hsl(38 28% 90%) 100%);
+  border: 1px solid hsl(var(--foreground) / 0.08);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 3px hsl(var(--foreground) / 0.05),
+    0 8px 24px hsl(var(--foreground) / 0.08),
+    inset 0 0 60px hsl(38 20% 88% / 0.3);
+  overflow: hidden;
+}
+
+/* Page flip animations */
+@keyframes page-flip-out {
+  0% { transform: rotateY(0deg); opacity: 1; }
+  50% { transform: rotateY(-8deg); opacity: 0.7; }
+  100% { transform: rotateY(-20deg); opacity: 0; }
+}
+@keyframes page-flip-in {
+  0% { transform: rotateY(20deg); opacity: 0; }
+  50% { transform: rotateY(8deg); opacity: 0.7; }
+  100% { transform: rotateY(0deg); opacity: 1; }
+}
+.animate-page-flip-out {
+  animation: page-flip-out 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: left center;
+}
+.animate-page-flip-in {
+  animation: page-flip-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: right center;
+}
+
+/* ── Cursor trail glow effect ── */
+.glow-cursor {
+  position: relative;
+}
+.glow-cursor::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, hsl(var(--secondary) / 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.glow-cursor:hover::after {
+  opacity: 1;
+}
+
+/* ── Marquee animation for tickers ── */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Background floating blobs ── */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+@keyframes float-medium {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-40px, 30px) scale(1.08); }
+}
+@keyframes float-fast {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(20px, -20px); }
+  75% { transform: translate(-15px, 15px); }
+}
+.animate-float-slow { animation: float-slow 20s ease-in-out infinite; }
+.animate-float-medium { animation: float-medium 15s ease-in-out infinite; }
+.animate-float-fast { animation: float-fast 12s ease-in-out infinite; }
+
+/* Hide scrollbar for horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
