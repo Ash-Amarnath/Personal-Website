@@ -90,10 +90,10 @@ export default function AmarnathHome() {
       {/* ── Impact Stats ── */}
       <Section className="py-10 md:py-14 border-y border-border bg-muted/30">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <ScrollReveal delay={0}><AnimatedCounter end={300} suffix="+" label="Students mentored" /></ScrollReveal>
-          <ScrollReveal delay={100}><AnimatedCounter end={7} suffix="" label="Research projects" /></ScrollReveal>
+          <ScrollReveal delay={0}><AnimatedCounter end={500} suffix="+" label="Students mentored" /></ScrollReveal>
+          <ScrollReveal delay={100}><AnimatedCounter end={10} suffix="" label="Research projects" /></ScrollReveal>
           <ScrollReveal delay={200}><AnimatedCounter end={2} suffix="" label="Organisations founded" /></ScrollReveal>
-          <ScrollReveal delay={300}><AnimatedCounter end={5} suffix="" label="Published writings" /></ScrollReveal>
+          <ScrollReveal delay={300}><AnimatedCounter end={2} suffix="" label="Published writings" /></ScrollReveal>
         </div>
       </Section>
 
@@ -102,7 +102,7 @@ export default function AmarnathHome() {
         <HorizontalCardScroll
           items={newsItems}
           title="What's Happening"
-          subtitle="Updates from Ash's world · Research · Education · Community"
+          subtitle="Updates from Ash's world · Research · Education · Community . Leadership"
           viewMoreLink="/amarnath/writings"
         />
       </Section>
