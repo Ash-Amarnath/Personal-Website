@@ -68,7 +68,7 @@ export default function AmarnathHome() {
               <p className="font-display text-lg md:text-xl text-muted-foreground italic mb-6 max-w-2xl">"Teaching with clarity · Leading with integrity · Researching with vision"</p>
             </ScrollReveal>
             <ScrollReveal delay={300}>
-              <p className="text-foreground mb-6 max-w-2xl">I'm Ash, a researcher and educator working at the intersection of AI, health, and social questions. As a Young India Fellow at Ashoka University, I build tools, workshops, and writing that help students think with data and help communities talk honestly about gender, sexuality, and care.</p>
+              <p className="text-foreground mb-6 max-w-2xl">I’ve always been drawn to research and teaching, and to building with purpose — turning curiosity into work that creates meaningful impact. Across Norwich University, Ashoka University, and projects like SkillCeta and Project People Talk, my work has grown through classrooms, conversations, and communities, shaped by a desire to make learning more open, thoughtful, and human. I care about work that brings people together, asks better questions, and creates space for ideas to become something useful in the world.</p>
             </ScrollReveal>
             <ScrollReveal delay={350}>
               <div className="flex flex-wrap gap-2 mb-8">
