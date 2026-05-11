@@ -326,7 +326,7 @@ export default function SkillCetaPage() {
           org="skillceta"
           accentClass="text-sky-600"
           accentBg="bg-sky-500"
-          googleFormUrl="https://docs.google.com/forms/d/e/YOUR_SKILLCETA_FORM_ID/viewform"
+          googleFormUrl="https://forms.gle/uKVmuf2DCa7Nvjap9"
         />
       </Section>
     </PageLayout>
