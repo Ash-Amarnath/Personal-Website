@@ -301,7 +301,7 @@ export default function ProjectPeopleTalkPage() {
       {/* ── Membership ── */}
       <Section>
         {/* TODO: Replace YOUR_PPT_FORM_ID with your real Google Form ID */}
-        <MembershipForm org="ppt" accentClass="text-rose-600" accentBg="bg-rose-500" googleFormUrl="https://forms.gle/Jei8s6K2TXHHgyvr6" />
+        <MembershipForm org="ppt" accentClass="text-rose-600" accentBg="bg-rose-500" googleFormUrl="https://forms.gle/LzzE6PnvWefxgtkS6" />
       </Section>
     </PageLayout>
   );
